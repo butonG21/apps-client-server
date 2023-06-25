@@ -20,6 +20,7 @@ const server = http.createServer((req, res) => {
       // membuat log file menggunkan  fs.appendFile() untuk menampung data dari `logEntry` //
       fs.appendFile('server.log', logEntry, (err) => {
         if (err) {
+          // eslint-disable-next-line no-console
           console.error('Failed to write to server.log:', err);
         }
       });
@@ -34,5 +35,6 @@ const server = http.createServer((req, res) => {
 
 const port = 3000;
 server.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`server running on port ${port}`);
 });
